@@ -1,1 +1,53 @@
-<p>weather works!</p>
+<div class="full-size animate-bg">
+    <div class="corner-left p-10 center-element-h">
+        <button mat-icon-button (click)="goBack()">
+            <mat-icon class="white">arrow_back_ios</mat-icon>
+        </button>
+    </div>
+    <div class="corner-right p-10 center-element" style="height:36px">
+        <mat-card style="background:transparent;box-shadow:none">
+            <mat-card-header>
+              <div mat-card-avatar class="profile-header-image" style="height:40px;width:40px;"  (click)="gotoHome()">
+                <img  src="{{user?.picture}}" class="md-user-avatar full-size"/>
+              </div>
+              <mat-card-title class="m-0" style="font-size:13px;"  (click)="gotoHome()">{{user?.name }}</mat-card-title>
+              <mat-card-title class="m-0" style="font-size:12px;" ><a href="http://github.com/{{user?.nickname}}" target="_blank"  class="white">Git: {{user?.nickname }}</a></mat-card-title>
+             <mat-card-subtitle  class="m-0 hand-cursor" style="font-size:11px;" (click)="logout()">
+                Logout
+            </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+    
+    <div class="center-element full-width half-size p-t-20">
+        <div class="content-container full-width">
+          <h1 class="center-element white ">{{getCurrentCity | titlecase}}</h1>
+          <mat-grid-list cols="{{isMobile ? 2 : 6}}"  rowHeight="200px" gutterSize="5px">
+            <mat-grid-tile>
+              <mat-grid-tile-header class="center-element">Date</mat-grid-tile-header>
+              <p class="white text-center">{{weatherCondition?.date || 'No Data'}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-grid-tile-header class="center-element">Temp (F)</mat-grid-tile-header>
+              <p class="white text-center">{{weatherCondition?.temp || 'No Data'}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile *ngIf="!isMobile">
+              <mat-grid-tile-header class="center-element">Description</mat-grid-tile-header>
+              <p class="white text-center">{{(weatherCondition?.description | titlecase) || 'No Data'}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile *ngIf="!isMobile">
+              <mat-grid-tile-header class="center-element">Main</mat-grid-tile-header>
+              <p class="white text-center">{{weatherCondition?.main || 'No Data'}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile *ngIf="!isMobile">
+              <mat-grid-tile-header class="center-element">Pressure</mat-grid-tile-header>
+              <p class="white text-center">{{weatherCondition?.pressure || 'No Data'}}</p>
+            </mat-grid-tile>
+            <mat-grid-tile *ngIf="!isMobile">
+              <mat-grid-tile-header class="center-element">Humidity</mat-grid-tile-header>
+              <p class="white text-center">{{weatherCondition?.humidity || 'No Data'}}</p>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+    </div>
+</div>

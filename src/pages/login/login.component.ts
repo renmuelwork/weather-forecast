@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { RoutingUrlEnums } from 'src/enums/paths/routing-url.enum';
-import { UserInterface } from 'src/interfaces/user.interface';
+import { IUser } from 'src/interfaces/user.interface';
 import { AuthManagerService as AuthManagerService } from 'src/managers/auth-manager/auth-manager.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     private router: Router) {}
 
   ngOnInit(): void {
-    this.checkUser();
+    this.authManager.checkHasUser();
   }
 
   login(): void {
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     return this.authManager._user;
   }
   
-  set User(value:UserInterface) {
+  set User(value:IUser) {
     this.authManager._user = value
   }
 }

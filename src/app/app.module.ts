@@ -10,12 +10,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { AuthModule } from '@auth0/auth0-angular';
 import { ManagerModule } from 'src/managers/managers.module';
 import { ServicesModule } from 'src/services/services.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

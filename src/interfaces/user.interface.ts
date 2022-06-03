@@ -1,4 +1,4 @@
-export interface UserInterface{
+export interface IUser{
     name?: string
     nickname?: string
     picture?: string

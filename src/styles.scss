@@ -2,6 +2,17 @@
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 @import "./assets/css/custom.css";
 @import './assets/css/color.css';
-
+@import './assets/css/spacing.scss';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media screen and (max-width: 600px) {
+    #hidden-fields {
+      visibility: hidden;
+      clear: both;
+      float: left;
+      margin: 10px auto 5px 20px;
+      width: 28%;
+      display: none;
+    }
+  }
