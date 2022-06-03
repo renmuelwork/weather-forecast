@@ -1,0 +1,29 @@
+.center-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.center-element-v {
+    display: flex;
+    align-items: center;
+  }
+  
+.center-element-h {
+    display: flex;
+    justify-content: center;
+  }
+
+  .full-height{
+      height:100%
+  }
+
+  .full-width{
+      width:100%
+  }
+
+  .full-size{
+      height:100%;
+      width:100%;
+  }
+
