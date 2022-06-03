@@ -27,3 +27,29 @@
       width:100%;
   }
 
+  .animate-bg {
+    background: linear-gradient(214deg, #4e0025, #9c0130, #ce7c01, #b48800, #026517, #002447);
+    background-size: 1200% 1200%;
+    -webkit-transform-style: preserve-3d;   
+    -webkit-backface-visibility: hidden;
+      -webkit-animation: bgTransition 35s ease infinite;
+      -moz-animation: bgTransition 35s ease infinite;
+      animation: bgTransition 35s ease infinite;
+  }
+  
+  @-webkit-keyframes bgTransition {
+      0%{background-position:0% 76%}
+      50%{background-position:100% 25%}
+      100%{background-position:0% 76%}
+  }
+  @-moz-keyframes bgTransition {
+      0%{background-position:0% 76%}
+      50%{background-position:100% 25%}
+      100%{background-position:0% 76%}
+  }
+  @keyframes bgTransition {
+      0%{background-position:0% 76%}
+      50%{background-position:100% 25%}
+      100%{background-position:0% 76%}
+  }
+  
